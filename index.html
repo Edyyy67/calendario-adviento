@@ -168,8 +168,8 @@ button:not(.card):hover,[role=button]:hover{filter:brightness(1.15)}
 #grid .card.tone-green{background:linear-gradient(150deg,#3c8550,#17422d);border-color:#9bd0a1}
 #grid .card.tone-gold{background:linear-gradient(150deg,#ffe08a,#af7628);border-color:#fff0a7;color:#392509;box-shadow:0 0 24px #f0c14e66,inset 0 0 20px #6b3e1044}
 #grid .card.tone-gold .n{color:#fff3b7}
-#grid .card.done.bite-a{clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)}
-#grid .card.done.bite-b{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+#grid .card.done.bite-a{clip-path:url(#bite-a)}
+#grid .card.done.bite-b{clip-path:url(#bite-b)}
 #grid .card.today{border:2px solid #fff2b5;animation:today-bounce 1.7s ease-in-out infinite,today-glow 1.7s ease-in-out infinite}
 @keyframes today-bounce{0%,100%{translate:0 0}50%{translate:0 -6px}}
 @keyframes today-glow{0%,100%{box-shadow:0 6px 18px #0007,inset 0 0 20px #0005}50%{box-shadow:0 0 30px #ffe08acc,0 0 46px #ffd35c77,inset 0 0 24px #fff5}}
@@ -249,7 +249,7 @@ button:not(.card):hover,[role=button]:hover{filter:brightness(1.15)}
 <symbol id="i-print" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M30 6C16 6 8 17 8 30v14"/><path d="M30 12c-10 0-16 8-16 18v18"/><path d="M30 18c-6 0-10 5-10 12v22"/><path d="M30 24c-3 0-4 3-4 6v26"/><path d="M36 14c8 3 12 9 12 17v16"/><path d="M36 22c4 2 6 5 6 9v20"/><path d="M34 30v24"/></g></symbol>
 <symbol id="i-lock" viewBox="0 0 50 50"><rect x="11" y="22" width="28" height="22" rx="4" fill="#777"/><path d="M17 22v-6a8 8 0 0116 0v6" fill="none" stroke="#999" stroke-width="4"/></symbol>
 <symbol id="i-wreath" viewBox="0 0 200 200"><g class="spin"><circle cx="100" cy="100" r="62" fill="none" stroke="#25511D" stroke-width="30" stroke-dasharray="14 3"/><circle cx="100" cy="100" r="62" fill="none" stroke="#3f8a33" stroke-width="14" stroke-dasharray="6 9"/></g><g fill="#c8283a"><circle cx="60" cy="52" r="6"/><circle cx="142" cy="60" r="6"/><circle cx="48" cy="120" r="6"/><circle cx="150" cy="132" r="6"/><circle cx="98" cy="164" r="6"/></g><g fill="#ffd978"><circle class="bulb" style="--i:1" cx="100" cy="30" r="4"/><circle class="bulb" style="--i:2" cx="160" cy="75" r="4"/><circle class="bulb" style="--i:3" cx="150" cy="150" r="4"/><circle class="bulb" style="--i:4" cx="60" cy="158" r="4"/><circle class="bulb" style="--i:5" cx="40" cy="80" r="4"/></g><path d="M100 24c-24-20-34 2-14 8zM100 24c24-20 34 2 14 8z" fill="#8a2230" stroke="#e8c46a" stroke-width="2"/><circle cx="100" cy="28" r="6" fill="#a02838" stroke="#e8c46a"/></symbol>
-</defs></svg>
+</defs><clipPath id="bite-a" clipPathUnits="objectBoundingBox"><path d="M.22 0H1V.78C.97.80 .95.83 .93.86C.90.90 .86.88 .85.92C.84.96 .88.99 .78 1H0V.22C.03.20 .05.17 .07.14C.10.10 .14.12 .15.08C.16.04 .12.01 .22 0Z"/></clipPath><clipPath id="bite-b" clipPathUnits="objectBoundingBox"><path transform="rotate(90 .5 .5)" d="M.22 0H1V.78C.97.80 .95.83 .93.86C.90.90 .86.88 .85.92C.84.96 .88.99 .78 1H0V.22C.03.20 .05.17 .07.14C.10.10 .14.12 .15.08C.16.04 .12.01 .22 0Z"/></clipPath></svg>
 <div id="snow" aria-hidden="true"></div><div id="deco" aria-hidden="true"></div>
 <nav id="bar" hidden aria-label="Navegación">
 <button data-go="calendar">Calendario</button><button data-go="sky"><span class="lg">Nuestro cielo</span><span class="sh">Cielo</span></button><button data-go="memories">Recuerdos</button><button data-go="clues">Investigación</button>
