@@ -213,10 +213,10 @@ button:not(.card):hover,[role=button]:hover{filter:brightness(1.15)}
 .sh{display:none}
 @media(max-width:560px){
 .lg{display:none}.sh{display:inline}
-#bar{flex-wrap:nowrap;gap:.25rem;padding:.4rem;padding-top:calc(.4rem + env(safe-area-inset-top))}
+#bar{flex-wrap:wrap;row-gap:.25rem;gap:.25rem;padding:.4rem;padding-top:calc(.4rem + env(safe-area-inset-top))}
 #bar button{flex:1 1 auto;min-height:36px;padding:.3rem .45rem;font-size:.74rem;white-space:nowrap}
-#vol{display:none}
-.view{padding:3.6rem .8rem 2.5rem}#door{padding-top:3.4rem}
+#vol{display:block;flex:0 0 auto;width:clamp(78px,26vw,110px);height:18px;margin:0 auto}
+.view{padding:4.2rem .8rem 2.5rem}#door{padding-top:4.2rem}
 #modal{padding:3.4rem .8rem 1.5rem}#modal .x{width:40px;height:40px;top:calc(.5rem + env(safe-area-inset-top))}
 .ct{font-size:1.5rem}.bell{width:32px}
 }
