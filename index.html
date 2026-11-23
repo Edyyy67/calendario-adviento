@@ -314,7 +314,7 @@ const ICONS=['i-star','i-bell','i-holly','i-gift','i-candle','i-flake'];
 
 /* ===== 8. FECHAS (Europe/Madrid) ===== */
 const Dates={
-  override:new URLSearchParams(location.search).get('fecha'), // prueba: ?fecha=2026-12-10
+  override:['localhost','127.0.0.1'].includes(location.hostname)?new URLSearchParams(location.search).get('fecha'):null, // solo pruebas locales: ?fecha=2026-12-10
   today(){if(this.override)return this.override;return new Intl.DateTimeFormat('en-CA',{timeZone:CONFIG.tz}).format(new Date())},
   key:(()=>{try{return localStorage.getItem("andrea-key")==="1"}catch(e){return false}})(),unlocked(n){return this.key||this.today()>=CONFIG.year+'-12-'+String(n).padStart(2,'0')}
 };
