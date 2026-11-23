@@ -48,7 +48,7 @@ h1,h2,h3{font-weight:400;letter-spacing:.02em}
 .stage.open .l{transform:rotateY(-112deg)}.stage.open .r{transform:rotateY(112deg)}
 .stage.open .wreath{opacity:0;transform:translate(-50%,0) scale(1.6)}
 .wreath{position:absolute;left:50%;top:22%;width:78%;transform:translate(-50%,0);transition:1.2s;filter:drop-shadow(0 6px 8px #0008)}
-.plaque{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);padding:.2rem 1.4rem;background:var(--wine);border:2px solid var(--gold);border-radius:6px;font-size:1.4rem;color:var(--gold);transition:opacity 1s}
+.plaque{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);padding:.25rem .55rem;background:var(--wine);border:2px solid var(--gold);border-radius:6px;font-size:clamp(.68rem,3vw,.95rem);line-height:1.2;color:var(--gold);white-space:nowrap;max-width:92%;transition:opacity 1s}
 .stage.open .plaque{opacity:0}
 .bulb{animation:tw 2s ease-in-out infinite;animation-delay:calc(var(--i)*.23s)}
 @keyframes tw{50%{opacity:.25}}
@@ -164,6 +164,16 @@ button:not(.card):hover,[role=button]:hover{filter:brightness(1.15)}
 #grid .card:hover::before{left:130%}
 #grid .card:not(.locked):hover svg{animation:wig .5s infinite}
 .card.locked svg{animation:none}.card.locked:hover svg{animation:shk .5s}
+#grid .card.tone-wine{background:linear-gradient(150deg,#963743,#571923);border-color:#e2a0a0}
+#grid .card.tone-green{background:linear-gradient(150deg,#3c8550,#17422d);border-color:#9bd0a1}
+#grid .card.tone-gold{background:linear-gradient(150deg,#ffe08a,#af7628);border-color:#fff0a7;color:#392509;box-shadow:0 0 24px #f0c14e66,inset 0 0 20px #6b3e1044}
+#grid .card.tone-gold .n{color:#fff3b7}
+#grid .card.done.bite-a{clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)}
+#grid .card.done.bite-b{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+#grid .card.today{border:2px solid #fff2b5;animation:today-bounce 1.7s ease-in-out infinite,today-glow 1.7s ease-in-out infinite}
+@keyframes today-bounce{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@keyframes today-glow{0%,100%{box-shadow:0 6px 18px #0007,inset 0 0 20px #0005}50%{box-shadow:0 0 30px #ffe08acc,0 0 46px #ffd35c77,inset 0 0 24px #fff5}}
+@media(prefers-reduced-motion:reduce){#grid .card.today{animation:none;box-shadow:0 0 30px #ffe08acc}}
 #clues{max-width:none;background:radial-gradient(ellipse at 20% 0,#1f232b,#0b0c0e 70%)}
 .myst{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:3}
 .lupa{position:absolute;width:120px;top:0;left:0;filter:drop-shadow(0 8px 8px #000);animation:search 16s ease-in-out infinite alternate}
@@ -248,17 +258,17 @@ button:not(.card):hover,[role=button]:hover{filter:brightness(1.15)}
 <main>
 <section id="door" class="view">
 <h1 style="font-size:clamp(2rem,8vw,3.4rem);color:var(--gold)">Andrea</h1>
-<p>Ha llegado el momento de descubrir algo especial. Llama a la puerta.</p>
+<p>¡Holiii, cariño! Sé que no te gusta el suspense, así que te va a tocar estar un mesecito con él. Te amo.</p>
 <div class="stage" id="stage" role="button" tabindex="0" aria-label="Abrir la puerta">
 <div class="glow"></div><div class="leaf l"></div><div class="leaf r"></div>
 <svg class="wreath" viewBox="0 0 200 200"><use href="#i-wreath"/></svg><svg class="arc" viewBox="0 0 300 90"><path d="M10 80Q150 -10 290 80" fill="none" stroke="#25511D" stroke-width="7"/><g fill="#ffd978"><circle class="bulb" style="--i:1" cx="38" cy="64" r="5"/><circle class="bulb" style="--i:2" cx="80" cy="46" r="5"/><circle class="bulb" style="--i:3" cx="122" cy="37" r="5"/><circle class="bulb" style="--i:4" cx="150" cy="35" r="5"/><circle class="bulb" style="--i:5" cx="178" cy="37" r="5"/><circle class="bulb" style="--i:6" cx="220" cy="46" r="5"/><circle class="bulb" style="--i:7" cx="262" cy="64" r="5"/></g></svg>
 <svg class="lan" style="left:-10%" viewBox="0 0 30 70"><path d="M15 0v14" stroke="#c9a45c"/><rect x="5" y="14" width="20" height="36" rx="5" fill="#c9a45c"/><rect class="bulb" style="--i:2" x="9" y="19" width="12" height="26" rx="3" fill="#ffd27a"/></svg>
 <svg class="lan" style="right:-10%;animation-delay:-2s" viewBox="0 0 30 70"><path d="M15 0v14" stroke="#c9a45c"/><rect x="5" y="14" width="20" height="36" rx="5" fill="#c9a45c"/><rect class="bulb" style="--i:3" x="9" y="19" width="12" height="26" rx="3" fill="#ffd27a"/></svg>
-<div class="plaque">Andrea</div></div>
+<div class="plaque">Calendario del amor de mi vida</div></div>
 <p style="opacity:.7">Pulsa la puerta</p>
 </section>
 <section id="calendar" class="view" hidden>
-<div class="garland" id="garland"></div><h2 class="ct"><svg class="bell" viewBox="0 0 50 50"><use href="#i-bell"/></svg>Adviento de Andrea<svg class="bell" viewBox="0 0 50 50"><use href="#i-bell"/></svg></h2>
+<div class="garland" id="garland"></div><h2 class="ct"><svg class="bell" viewBox="0 0 50 50"><use href="#i-bell"/></svg>Calendario del amor de mi vida<svg class="bell" viewBox="0 0 50 50"><use href="#i-bell"/></svg></h2>
 <p id="calmsg" style="text-align:center"></p><div class="prog"><b id="pbar"></b></div>
 <div id="grid"></div>
 </section>
@@ -316,6 +326,8 @@ const ICONS=['i-star','i-bell','i-holly','i-gift','i-candle','i-flake'];
 const Dates={
   override:['localhost','127.0.0.1'].includes(location.hostname)?new URLSearchParams(location.search).get('fecha'):null, // solo pruebas locales: ?fecha=2026-12-10
   today(){if(this.override)return this.override;return new Intl.DateTimeFormat('en-CA',{timeZone:CONFIG.tz}).format(new Date())},
+  currentDay(){const t=this.today();return t.slice(0,4)===String(CONFIG.year)&&t.slice(5,7)==='12'?Number(t.slice(8,10)):0},
+  isToday(n){return this.currentDay()===n},
   key:(()=>{try{return localStorage.getItem("andrea-key")==="1"}catch(e){return false}})(),unlocked(n){return this.key||this.today()>=CONFIG.year+'-12-'+String(n).padStart(2,'0')}
 };
 /* ===== 9. ESTADO ===== */
@@ -366,9 +378,9 @@ const markOpen=d=>{if(!State.data.opened[d.id]){State.data.opened[d.id]=Date.now
 
 /* ===== 6. CALENDARIO ===== */
 const Calendar={render(){const g=$('#grid');const labels={locked:'Bloqueado',open:'Disponible',done:'Completado'};
-  g.innerHTML=ORDER.map(n=>{const d=DAYS[n-1],i=n-1;const s=State.status(d.number);const cls=['card',s==='open'?'':s==='done'?'done':'locked',SIZE(d.number)].join(' ');
+  g.innerHTML=ORDER.map(n=>{const d=DAYS[n-1],i=n-1;const s=State.status(d.number);const tone=GOLD_DAYS.has(n)?'tone-gold':GREEN_DAYS.has(n)?'tone-green':'tone-wine';const bite=s==='done'?(n%2?'bite-a':'bite-b'):'';const today=Dates.isToday(n)?'today':'';const cls=['card',tone,s==='done'?'done':s==='locked'?'locked':'',bite,today,SIZE(n)].filter(Boolean).join(' ');
     const icon=s==='locked'?'i-lock':d.number===25?'i-gift':d.type==='special'?'i-wreath':ICONS[i%6];
-    return`<button class="${cls}" style="--i:${d.number}" data-day="${d.number}" aria-label="Día ${d.number}, ${labels[s]}">${ic(icon)}<span class="n">${d.number===25?'25 · Navidad':d.number}</span><span class="st">${labels[s]}</span></button>`}).join('');
+    return`<button class="${cls}" style="--i:${d.number}" data-day="${d.number}" aria-label="Día ${d.number}, ${labels[s]}">${ic(icon)}<span class="n">${d.number===25?'25 · Navidad':d.number}</span><span class="st">${s==='locked'?'Bloqueado':''}</span></button>`}).join('');
   const done=State.stars();$('#pbar').style.width=(done/24*100)+'%';
   $('#calmsg').textContent=Dates.unlocked(1)?`${done} de 24 días completados`:'Aún no es diciembre. Los días se abrirán a partir del 1 de diciembre a las 00:00.'},
   click(n){const d=DAYS[n-1];if(!Dates.unlocked(n)){const c=$(`[data-day="${n}"]`);c.classList.add('shake');setTimeout(()=>c.classList.remove('shake'),450);toast(n===25?'El día 25 se abre en Navidad.':`El día ${n} todavía no está disponible.`);return}
@@ -440,6 +452,8 @@ const Archive={render(){$('#docs').innerHTML=CLUES.map((c,i)=>{const t=State.dat
  Recreación estilizada: una estrella por día completado. La posición real (Madrid, 6-dic-2025, 18:30) requiere Astronomy Engine; ver ASTRO. */
 const ASTRO={lat:40.4168,lon:-3.7038,date:'2025-12-06T18:30:00+01:00'}; // reservado para el cálculo astronómico real
 const ORDER=(()=>{let s=11;const a=Array.from({length:24},(_,i)=>i+1);for(let i=23;i>0;i--){s=(s*16807)%2147483647;const j=s%(i+1);[a[i],a[j]]=[a[j],a[i]]}return[...a,25]})();
+const GOLD_DAYS=new Set([6,17,25]);
+const GREEN_DAYS=new Set(ORDER.filter(n=>!GOLD_DAYS.has(n)).filter((_,i)=>i%2===0));
 const LETTERDAYS=DAYS.filter(d=>d.type==='letter').map(d=>d.number);
 const WAX=[['#c0404c','#6E1822'],['#4f9a42','#25511D'],['#e0bd6c','#8a6a2a'],['#4a6aa0','#1b2a4a'],['#9a4a8a','#4a1b40']];
 const EMB=['i-holly','i-star','i-bell','i-flake','i-candle','i-heart','i-tree','i-gift','i-moon'];
@@ -460,15 +474,17 @@ const Deco={init(){const ids=['i-star','i-bell','i-holly','i-gift','i-candle','i
   $('#garland').innerHTML=`<svg viewBox="0 0 100 46" preserveAspectRatio="none"><polyline points="${p.join(' ')}"/></svg>`+b}};
 const Sky={raf:0,bg:[],pts:[],sh:null,start(){const c=$('#skyc');const dpr=Math.min(devicePixelRatio||1,2);c.width=c.clientWidth*dpr;c.height=c.clientHeight*dpr;
   let s=7;const rnd=()=>(s=(s*16807)%2147483647)/2147483647;
+  const completed=DAYS.filter(d=>d.number<25&&State.data.completed[d.id]).map(d=>d.number),n=completed.length;
   this.pts=Array.from({length:24},()=>({x:.05+rnd()*.9,y:rnd()*.8,r:2+rnd()*2.5,p:rnd()*6}));
+  this.pts[5]={...this.pts[5],x:.36,y:.5};this.pts[16]={...this.pts[16],x:.64,y:.5};
   this.bg=Array.from({length:170},()=>({x:rnd(),y:rnd(),r:.4+rnd()*1.1,p:rnd()*6,v:.5+rnd()*2}));
-  const n=State.stars();$('#skymsg').textContent=`${n} de 24 estrellas principales encendidas. Cada día completado añade una.`;const x=c.getContext('2d');
+  $('#skymsg').textContent=`${n} de 24 estrellas principales encendidas. Cada día completado añade una.`;const x=c.getContext('2d');
   const draw=t=>{x.clearRect(0,0,c.width,c.height);const W=c.width,H=c.height;
     this.bg.forEach(p=>{x.fillStyle=`rgba(210,225,255,${.25+.45*Math.abs(Math.sin(t/1000*p.v+p.p))})`;x.beginPath();x.arc(p.x*W,p.y*H,p.r*dpr,0,7);x.fill()});
-    x.strokeStyle='rgba(255,236,170,.22)';x.lineWidth=dpr;x.beginPath();for(let i=0;i<n;i++){const p=this.pts[i];i?x.lineTo(p.x*W,p.y*H):x.moveTo(p.x*W,p.y*H)}x.stroke();
-    for(let i=0;i<n;i++){const p=this.pts[i],a=.6+.4*Math.sin(t/600+p.p),px=p.x*W,py=p.y*H,r=p.r*dpr*(1+.2*a);
-      const g=x.createRadialGradient(px,py,0,px,py,r*6);g.addColorStop(0,'rgba(255,240,190,'+a+')');g.addColorStop(1,'rgba(255,240,190,0)');x.fillStyle=g;x.beginPath();x.arc(px,py,r*6,0,7);x.fill();
-      x.strokeStyle=`rgba(255,244,200,${a*.8})`;x.beginPath();x.moveTo(px-r*5,py);x.lineTo(px+r*5,py);x.moveTo(px,py-r*5);x.lineTo(px,py+r*5);x.stroke()}
+    x.strokeStyle='rgba(255,236,170,.22)';x.lineWidth=dpr;x.beginPath();completed.forEach((day,i)=>{const p=this.pts[day-1];i?x.lineTo(p.x*W,p.y*H):x.moveTo(p.x*W,p.y*H)});x.stroke();
+    for(let i=0;i<n;i++){const day=completed[i],p=this.pts[day-1],a=.6+.4*Math.sin(t/600+p.p),px=p.x*W,py=p.y*H,r=p.r*dpr*(1+.2*a),color=day===6?'255,218,91':day===17?'116,194,255':'255,240,190';
+      const g=x.createRadialGradient(px,py,0,px,py,r*6);g.addColorStop(0,`rgba(${color},${a})`);g.addColorStop(1,`rgba(${color},0)`);x.fillStyle=g;x.beginPath();x.arc(px,py,r*6,0,7);x.fill();
+      x.strokeStyle=`rgba(${color},${a*.85})`;x.beginPath();x.moveTo(px-r*5,py);x.lineTo(px+r*5,py);x.moveTo(px,py-r*5);x.lineTo(px,py+r*5);x.stroke()}
     if(!this.sh&&Math.random()<.004)this.sh={x:Math.random()*W*.7,y:Math.random()*H*.4,l:0};
     if(this.sh){const q=this.sh,px=q.x+q.l*9*dpr,py=q.y+q.l*4*dpr,g=x.createLinearGradient(px-70*dpr,py-30*dpr,px,py);g.addColorStop(0,'rgba(255,255,255,0)');g.addColorStop(1,'rgba(255,255,255,.9)');x.strokeStyle=g;x.lineWidth=2*dpr;x.beginPath();x.moveTo(px-70*dpr,py-30*dpr);x.lineTo(px,py);x.stroke();if(++q.l>40)this.sh=null}
     this.raf=requestAnimationFrame(draw)};this.stop();draw(0)},stop(){cancelAnimationFrame(this.raf)}};
